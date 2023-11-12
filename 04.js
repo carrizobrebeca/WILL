@@ -13,8 +13,26 @@ function numeroSimetrico(num) {
   // numeroSimetrico(11711) devuelve true
 
   // Tu código:
+    // var numStr = num.toString();
+    // var numReverso = numStr.split('').reverse().join('');
+    // return numStr === numReverso;
+    var numStr = num.toString();
 
+    // Obtener la longitud del número
+    var longitud = numStr.length;
+
+    // Comparar los dígitos de los extremos hacia el centro
+    for (var i = 0; i < longitud / 2; i++) {
+        if (numStr[i] !== numStr[longitud - 1 - i]) {
+            return false;
+        }
+    }
+
+    // Si todos los dígitos coinciden, el número es simétrico
+    return true;
 }
+
+  
 
 // No modifiques nada debajo de esta linea //
 
